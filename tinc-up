@@ -1,6 +1,9 @@
 #!/bin/sh
 
-HOST_CONF=./hosts/$NAME
+DIR=$( dirname $0 )
+HOST_CONF=${DIR}/hosts/${NAME}
+RC=${DIR}/tinc-up.rc
+
 TINC_IP=$( cat $HOST_CONF | grep -i 'SelfIP' | gawk -F '\\s*=\\s*' '{print $2}' )
 
 if [ ! $TINC_IP ]; then
@@ -13,7 +16,6 @@ ifconfig $INTERFACE $TINC_IP netmask 255.255.0.0 \
 && echo "INFO: link $INTERFACE up, addr $TINC_IP" \
 || exit 1
 
-RC=tinc-up.rc
 if [[ -e $RC ]]; then
     source $RC
 fi
