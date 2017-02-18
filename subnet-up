@@ -9,7 +9,7 @@ _route_exist() {
 # $1 = ADDR
 _is_host() {
     local IS_SRC=$( ip route | grep -c "src $1" )
-    [ $IS_SRC ]
+    [ ${IS_SRC:-0} -gt 0 ]
 }
 
 if _is_host $SUBNET ; then
