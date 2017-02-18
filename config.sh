@@ -8,9 +8,9 @@ INTERFACE=overlay0
 SUPERNODES=''
 SUBNETS=''
 
-read -p 'Host name: ' HOST
-read -p 'Host Tinc IP: ' TINC_IP
-read -p 'Host Public IP/Hostname (or blank): ' PUBLIC_IP
+read -p 'Tinc name: ' NAME
+read -p 'Tinc IP: ' TINC_IP
+read -p 'Public IP/Hostname (or blank): ' PUBLIC_IP
 
 while : ; do
     read -p 'Connect To (or blank): ' CONNECT_TO
@@ -29,7 +29,7 @@ cat > tinc.conf << _EOF_
 Forwarding = kernel
 Interface = $INTERFACE
 
-Name = $HOST
+Name = $NAME
 
 _EOF_
 
@@ -38,9 +38,9 @@ for S in $SUPERNODES; do
 done
 
 #### Host Config
-HOST_CONF=hosts/${HOST}
+CONF=hosts/$NAME
 
-rm -f $HOST_CONF
+rm -f $CONF
 
 if [ `which tinc` ]; then
     tinc -n $NETNAME generate-keys 4096
@@ -48,22 +48,22 @@ else
     tincd -n $NETNAME -K 4096
 fi
 
-echo "" >> $HOST_CONF
+echo "" >> $CONF
 
 [[ $PUBLIC_IP ]] \
-&& echo "Address = $PUBLIC_IP" >> $HOST_CONF
+&& echo "Address = $PUBLIC_IP" >> $CONF
 
-echo "IndirectData = yes" >> $HOST_CONF
-echo "SelfIP = $TINC_IP" >> $HOST_CONF   # used by tinc-up
+echo "IndirectData = yes" >> $CONF
+echo "SelfIP = $TINC_IP" >> $CONF   # used by tinc-up
 for S in $TINC_IP $SUBNETS ; do
-    echo "Subnet = $S" >> $HOST_CONF
+    echo "Subnet = $S" >> $CONF
 done
 
 echo "******** Daemon Config ********"
 cat tinc.conf
 echo ""
-echo "******** Host Config $HOST ********"
-cat $HOST_CONF
+echo "******** Host Config $NAME ********"
+cat $CONF
 echo ""
 
 
