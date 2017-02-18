@@ -16,6 +16,6 @@ ifconfig $INTERFACE $TINC_IP netmask 255.255.0.0 \
 && echo "INFO: link $INTERFACE up, addr $TINC_IP" \
 || exit 1
 
-if [[ -e $RC ]]; then
+if [ -e $RC ]; then
     source $RC
 fi
