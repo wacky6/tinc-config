@@ -3,7 +3,7 @@
 # $1 = SUBNET
 _route_exist() {
     local COUNT=$( ip route | grep -c "^$1" )
-    [ ${COUNT:-0} -gt 0 -o $IS_SRC ]
+    [ ${COUNT:-0} -gt 0 ]
 }
 
 # $1 = ADDR
