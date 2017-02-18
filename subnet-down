@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# $1 = SUBNET
+_route_added_by_script() {
+    local COUNT=$( ip route | grep -c "^$1" | grep -c "dev $INTERFACE" )
+    [ ${COUNT:-0} -gt 0 ]
+}
+
+if $( _route_added_by_script $SUBNET ); then
+    echo "INFO: skip host-configured route to $SUBNET"
+else
+    echo "INFO: delete route to $SUBNET"
+    ip route del $SUBNET dev $INTERFACE
+fi;

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+HOST_CONF=./hosts/$NAME
+TINC_IP=$( cat $HOST_CONF | grep -i 'SelfIP' | gawk -F '\\s*=\\s*' '{print $2}' )
+
+if [ ! $TINC_IP ]; then
+    echo "ERROR: Tinc IP of $NAME is not set, add 'SelfIP = <ip>' in host config!"
+    echo "ERROR: Interface startup aborted."
+    exit 2
+fi
+
+ifconfig $INTERFACE $TINC_IP netmask 255.255.0.0
+
+RC=tinc-up.rc
+if [[ -e $RC ]]; then
+    source $RC
+fi
