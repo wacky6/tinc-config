@@ -4,7 +4,6 @@ tinc config of WaCkY's overlay network
 
 ## Prerequisite
 
-* gawk
 * iproute2
 * git
 

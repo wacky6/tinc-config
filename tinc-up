@@ -4,7 +4,7 @@ DIR=$( dirname $0 )
 HOST_CONF=${DIR}/hosts/${NAME}
 RC=${DIR}/tinc-up.rc
 
-TINC_IP=$( cat $HOST_CONF | grep -i 'SelfIP' | gawk -F '\\s*=\\s*' '{print $2}' )
+TINC_IP=$( cat $HOST_CONF | grep -i 'SelfIP' | awk -F '\\s*=\\s*' '{print $2}' )
 
 if [ ! $TINC_IP ]; then
     echo "ERROR: Tinc IP of $NAME is not set, add 'SelfIP = <ip>' in host config!"
