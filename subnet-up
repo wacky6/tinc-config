@@ -12,13 +12,14 @@ _is_host() {
     [ $IS_SRC ]
 }
 
-if _route_exist $SUBNET ; then
-    if _is_host ; then
-        echo "INFO: skip host route: $SUBNET"
-    else
-        echo "INFO: skip existing route to $SUBNET"
-    fi
+if _is_host $SUBNET ; then
+    echo "INFO: skip host route: $SUBNET"
 else
-    echo "INFO: add route for $SUBNET"
-    ip route add $SUBNET dev $INTERFACE
-fi;
+    if _route_exist $SUBNET ; then
+        echo "INFO: skip existing route: $SUBNET"
+    else
+        echo "INFO: add route: $SUBNET"
+        ip route add $SUBNET dev $INTERFACE
+    fi
+fi
+
