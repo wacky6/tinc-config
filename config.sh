@@ -40,7 +40,7 @@ done
 #### Host Config
 HOST_CONF=hosts/${HOST}
 
-rm $HOST_CONF
+rm -f $HOST_CONF
 
 if [ `which tinc` ]; then
     tinc -n $NETNAME generate-keys 4096
