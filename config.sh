@@ -14,12 +14,12 @@ read -p 'Public IP/Hostname (or blank): ' PUBLIC_IP
 
 while : ; do
     read -p 'Connect To (or blank): ' CONNECT_TO
-    [[ $CONNEC_TO ]] && SUPERNODES="$SUPERNODES $CONNECT_TO" || break
+    [ $CONNECT_TO ] && SUPERNODES="$SUPERNODES $CONNECT_TO" || break
 done
 
 while : ; do
     read -p 'Subnet (or blank): ' SUBNET
-    [[ $SUBNET ]] && SUBNETS="$SUBNETS $SUBNET" || break
+    [ $SUBNET ] && SUBNETS="$SUBNETS $SUBNET" || break
 done
 
 mkdir -p hosts
