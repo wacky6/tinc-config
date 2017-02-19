@@ -4,7 +4,7 @@ HOST_CONF=$( dirname $0 )/hosts/$NAME
 
 # $1 = SUBNET
 _route_exist() {
-    local COUNT=$( ip route get $1 | grep -c "dev $INTERFACE" )
+    local COUNT=$( ip route get $1 | grep -c "dev \\(${INTERFACE}\\|lo\\)" )
     [ ${COUNT:-0} -gt 0 ]
 }
 
