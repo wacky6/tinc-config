@@ -1,14 +1,41 @@
 #!/bin/sh
 
+HOST_CONF=$( dirname $0 )/hosts/$NAME
+IP=$( which ip )
+ROUTE=$( which route )
+NETSTAT=$( which netstat )
+
+if ! { [ `which ip` ] || [ `which route` ] ; } ; then
+    echo "ERROR: no routing tool found!"
+    exit 2
+fi
+
 # $1 = SUBNET
 _route_added_by_script() {
-    local COUNT=$( ip route | grep "^$1" | grep -c "dev $INTERFACE" )
-    [ ${COUNT:-0} -gt 0 ]
+    if [ $IP ] ; then
+        local COUNT=$( $IP route | grep "^$1" | grep -c "dev $INTERFACE" )
+        [ ${COUNT:-0} -gt 0 ]
+    elif [ $ROUTE ] ; then
+        local COUNT=$( $ROUTE get $SUBNET | grep "interface: " | grep -c $INTERFACE )
+        [ ${COUNT:-0} -gt 0 ]
+    fi
+}
+
+# $1 = SUBNET
+# $2 = INTERFACE
+_del_route() {
+    if [ $IP ] ; then
+        # iproute2
+        $IP del $1 dev $2
+    elif [ $ROUTE ] ; then
+        # BSD / MacOS route
+        $ROUTE delete $1 -iface $2
+    fi
 }
 
 if _route_added_by_script $SUBNET ; then
     echo "INFO: delete route to $SUBNET"
-    ip route del $SUBNET dev $INTERFACE
+    _del_route $SUBNET $INTERFACE
 else
     echo "INFO: skip host-configured route to $SUBNET"
 fi

@@ -12,7 +12,7 @@ if [ ! $TINC_IP ]; then
     exit 2
 fi
 
-ifconfig $INTERFACE $TINC_IP netmask 255.255.0.0 \
+ifconfig $INTERFACE $TINC_IP netmask 255.255.0.0 $TINC_IP \
 && echo "INFO: link $INTERFACE up, addr $TINC_IP" \
 || exit 1
 
