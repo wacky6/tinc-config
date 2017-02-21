@@ -48,6 +48,7 @@ else
 fi
 
 echo "" >> $CONF
+echo "IndirectData = yes" >> $CONF
 
 [[ $PUBLIC_IP ]] \
 && echo "Address = $PUBLIC_IP" >> $CONF
