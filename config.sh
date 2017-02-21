@@ -26,7 +26,6 @@ mkdir -p hosts
 
 #### Daemon Config
 cat > tinc.conf << _EOF_
-Forwarding = kernel
 Interface = $INTERFACE
 
 Name = $NAME
@@ -53,7 +52,6 @@ echo "" >> $CONF
 [[ $PUBLIC_IP ]] \
 && echo "Address = $PUBLIC_IP" >> $CONF
 
-echo "IndirectData = yes" >> $CONF
 echo "SelfIP = $TINC_IP" >> $CONF   # used by tinc-up
 for S in $TINC_IP $SUBNETS ; do
     echo "Subnet = $S" >> $CONF
