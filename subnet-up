@@ -1,17 +1,42 @@
 #!/bin/sh
 
 HOST_CONF=$( dirname $0 )/hosts/$NAME
+IP=$( which ip )
+ROUTE=$( which route )
+NETSTAT=$( which netstat )
+
+if ! { [ `which ip` ] || [ `which route` ] ; } ; then
+    echo "ERROR: no routing tool found!"
+    exit 2
+fi
 
 # $1 = SUBNET
 _route_exist() {
-    local COUNT=$( ip route get $1 | grep -c "dev \\(${INTERFACE}\\|lo\\)" )
-    [ ${COUNT:-0} -gt 0 ]
+    if [ $IP ] ; then
+        local COUNT=$( $IP route get $1 | grep -c "dev \\(${INTERFACE}\\|lo\\)" )
+        [ ${COUNT:-0} -gt 0 ]
+    elif [ $ROUTE ] ; then
+        local COUNT=$( $ROUTE get $1 | grep "destination: " | grep -c "default" )
+        [ ${COUNT:-1 } -eq 0 ]
+    fi
 }
 
 # $1 = ADDR
 _is_host() {
     local IS_HOST=$( cat $HOST_CONF | grep -i "Subnet\\s*=\\s*" | grep -c "$1" )
     [ ${IS_HOST:-0} -gt 0 ]
+}
+
+# $1: subnet
+# $2: interface
+_add_route() {
+    if [ $IP ] ; then
+        # iproute2
+        $IP route add $1 dev $2
+    elif [ $ROUTE ] ; then
+        # BSD / MacOS route
+        $ROUTE add $1 -iface $2
+    fi
 }
 
 if _is_host $SUBNET ; then
@@ -21,7 +46,7 @@ else
         echo "INFO: skip existing route: $SUBNET"
     else
         echo "INFO: add route: $SUBNET"
-        ip route add $SUBNET dev $INTERFACE
+        _add_route $SUBNET $INTERFACE
     fi
 fi
 
