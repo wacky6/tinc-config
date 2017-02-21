@@ -14,5 +14,6 @@ NJQmdsFbJ10Ocb/7eQvh99wq3tY9JIO6n4VuYum3TlzWhfpSE9HCZO8CAwEAAQ==
 -----END RSA PUBLIC KEY-----
 
 Address = sjc-1.wacky.one
+IndirectData = yes
 SelfIP = 172.31.0.128
 Subnet = 172.31.0.128
