@@ -14,7 +14,6 @@ ZxndmPy87cUE5cLTeYL+nzCYxI0QldoLcoM+SguQ1LbLwEIC/3o9UncCAwEAAQ==
 Ed25519PublicKey = GAN0KwFTWfxA+wUUBmAISrJsI0sMRZ8h5qErTM5BkuI
 
 Address = nkg.wacky.one
-IndirectData = yes
 SelfIP = 172.31.0.1
 Subnet = 172.31.0.1
 Subnet = 172.17.0.0/18
