@@ -16,3 +16,4 @@ Ed25519PublicKey = wo1AR2yBRDMyQSG+EMwZ3ElaF37cSOtaUV3jQl/canG
 IndirectData = yes
 SelfIP = 172.31.0.2
 Subnet = 172.31.0.2
+Subnet = 192.168.1.0/24#500
