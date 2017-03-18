@@ -18,3 +18,4 @@ Address = sjc-1.wacky.one
 IndirectData = yes
 SelfIP = 172.31.0.128
 Subnet = 172.31.0.128
+Subnet = 172.17.64.0/18
