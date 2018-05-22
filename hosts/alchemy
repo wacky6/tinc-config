@@ -1,0 +1,5 @@
+
+IndirectData = yes
+Address = alchemy.wacky.one
+SelfIP = 172.31.0.8
+Subnet = 172.31.0.8
