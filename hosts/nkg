@@ -18,4 +18,4 @@ IndirectData = yes
 SelfIP = 172.31.0.1
 Subnet = 172.31.0.1
 Subnet = 172.17.0.0/18
-Subnet = 192.168.1.0/24
+Subnet = 192.168.176.0/24
