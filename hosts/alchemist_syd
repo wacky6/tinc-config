@@ -15,5 +15,6 @@ Ed25519PublicKey = A/9UNyE99m2WkAux5vUpeotBnB5ElJumm9WI53fIvlP
 
 IndirectData = yes
 Address = alchemist.syd.wacky.one
+Port = 667
 SelfIP = 192.168.177.71
 Subnet = 192.168.177.71
