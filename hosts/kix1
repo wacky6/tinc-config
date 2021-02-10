@@ -1,0 +1,19 @@
+-----BEGIN RSA PUBLIC KEY-----
+MIICCgKCAgEAwZugbrNLMp569lkQRxXusB/B3Y/bJbIEir3yJSLaEDOtKvlAp6hj
+qGjq524sCV6oiBbWnP7eqzveJ9n4Dm8sGKf/MmX6uYujDzGJoDevIpWAGV/ivs1P
+q9hI1orEtj1nwuLRGUxBVsYqVtvi2h5o9dBaG22i98za3d1/rFZqayb6tc4+hD8c
+wH18PlDUTAhqwCgje/OIvzv4tx5WT5ERMDDI/Ptdu/u+/8htNRqWfXKBt/g2vOvy
+1BZo2gvcVIjAxnVtGZlJAsf2owrkU640nRvPXU5sbMX6uabj4SR9hFZHpSuEgwb3
+4x7TfwhMTZ7vhQJ7tEvkOootKJ3ZS8vtJtC9ibY01Exxo5HsHRE/5Tc7Mu8qOmIi
+fE5QMgknYORhE1xKy6MA1icFmYL3OQnOaGhOYib/+FMEfmOuT8Oe1omO4ot8Ftpn
+DWqdT7X8XrPF/YG4xt9xmn7k0leG+IPoZ+NDpoPP992/numzWKoK6ZhGODWnEB+k
+DnLccbeOd9JAnYoV6DbUA/msxa9vR+WrYyHOYTqmKEOeNZ4j3kuWIFcizEmKauCu
+lrQJG3N81srXTqsk8KH16ZaVD+lKX7NYNUkGZGgnlhKaPvAWdKPepiR66Ybmy+Nu
+6RUb1xwdbF9ARNJvhAHrXTLlrWT9e3x4ihWK3QfdYt9C1ah+QwHvyRECAwEAAQ==
+-----END RSA PUBLIC KEY-----
+Ed25519PublicKey = CCbmLJlQ2Yl2Hdn2G7knjgFuPRGGGkpspBTMg/J8heI
+
+IndirectData = yes
+Address = kix-1.wacky.one
+SelfIP = 172.31.0.132
+Subnet = 172.31.0.132
