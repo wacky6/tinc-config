@@ -17,4 +17,4 @@ IndirectData = yes
 Address = lax-6.wacky.one
 SelfIP = 172.31.0.130
 Subnet = 172.31.0.130
-Subnet = 192.168.180.1/24
+Subnet = 192.168.180.0/24
