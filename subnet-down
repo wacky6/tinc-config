@@ -26,7 +26,7 @@ _route_added_by_script() {
 _del_route() {
     if [ $IP ] ; then
         # iproute2
-        $IP del $1 dev $2
+        $IP route del $1 dev $2
     elif [ $ROUTE ] ; then
         # BSD / MacOS route
         $ROUTE delete $1 -iface $2
