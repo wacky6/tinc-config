@@ -1,0 +1,19 @@
+-----BEGIN RSA PUBLIC KEY-----
+MIICCgKCAgEAnuSEJh+9GVhApTYc3pqI7u1O1WeTL3jjgfUHLSqL0VKUpz5zVSIb
+VLd8LfqnKzsJy6cfjGU1WyfgwMDqozKHXUHsRYUj6IIEZOXFFRagwzo9gUhzcGop
+ORtbeUgalqkuli5/8DXHEEQda16CLP+Vcxgr0ig2wwfQGGY88RAJ/OKY3zSV/Dtl
+b84eaiGufVi/dZY+H3rLBN/7so8mxfesriraBHwH8kmwSW+tSaOaXaOdC6a24xzh
+5thLHhZoh5QUrzZ6ZV+kHslTM481eZRE57/rtHSfhJmTlkntQJwbkimtP+YCxseH
+kG3wuiOraJH4SWXObZHh91+lwXSzVSpmf5WznH06Y+OvyC5cNUykE3OaBrJKMEFK
+y0PubuTcI/1fRs7uAj61olSZdcTCRS8b9XlILg6s8ljPZCq+CtSJ4D1mcthfFW6w
+8dO8PE+yXn73ie6wzA8b4siA+PMiFL9up0brmVDtGWVk5ahFFqob0yDf5TSJJAx1
+/+t0g8mOcH/8iq1NAPDpEHV6mmf9QC2NPm+v+UwdNpV9yKWrruj/2EXc4SklceyH
+mV92F3xraQiczn+kMx2s1HEhCNmkAd7hHx3Mw0JTCDzt+VV9atkyh3yVlXCBbp0/
+ZQOC2IszVpq5i5Annf3IbjE6Bb3ZckmjA4tdRiSZ1Vtdtgqd99i04kECAwEAAQ==
+-----END RSA PUBLIC KEY-----
+Ed25519PublicKey = xdtL/6JEVBloELYJHsXJX6hoo0NdDnV+JPnRYb8b6QJ
+
+IndirectData = yes
+Address = syd-2.wacky.one
+SelfIP = 172.31.0.136
+Subnet = 172.31.0.136
