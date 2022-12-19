@@ -15,5 +15,6 @@ Ed25519PublicKey = CCbmLJlQ2Yl2Hdn2G7knjgFuPRGGGkpspBTMg/J8heI
 
 IndirectData = yes
 Address = kix-1.wacky.one
+Address = 2001:470:23:12e::2
 SelfIP = 172.31.0.132
 Subnet = 172.31.0.132
