@@ -41,11 +41,7 @@ CONF=hosts/$NAME
 
 rm -f $CONF
 
-if [ `which tinc` ]; then
-    tinc -n $NETNAME generate-keys 4096
-else
-    tincd -n $NETNAME -K 4096
-fi
+tinc -n $NETNAME generate-ed25519-keys
 
 echo "" >> $CONF
 echo "IndirectData = yes" >> $CONF
