@@ -1,0 +1,7 @@
+Ed25519PublicKey = HXG1MouOtVhcZ9En7eNN35ny9DpVS06jN5YKqdsfJqC
+
+IndirectData = yes
+Address = syd.wacky.one 657
+SelfIP = 172.31.0.138
+Subnet = 172.31.0.138
+Subnet = 192.168.177.0/24
